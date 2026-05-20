@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova CRM | WISE TECH Kurumsal Çözümler</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Nova CRM Sayfasına Özel Ek Stiller */
+        .back-btn-wrap {
+            max-width: 1200px;
+            margin: 8rem auto 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 8px;
+        }
+        
+        .back-btn:hover {
+            background: var(--neon-blue);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--neon-blue-glow);
+            transform: translateX(-4px);
+        }
+        
+        .back-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .nova-detail-section {
+            padding-top: 2rem;
+        }
+
+        /* Mockup hover durumunu sayfa açıldığında daha stabil tutmak için varsayılanı rotate yapabiliriz */
+        .nova-product-card .nova-screen {
+            transform: none; /* Standart sayfada sabit durması daha profesyonel */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Üst Navigasyon -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Wise Tech Logo" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><path d=\'M25 50 L50 25 L75 50 L60 65 L50 55 L40 65 Z\' fill=\'%231c2e4a\'/><path d=\'M75 50 L50 75 L25 50 L40 35 L50 45 L60 35 Z\' fill=\'%23111\'/></svg>'">
+                <div class="logo-text">WISE <span>TECH</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#vizyon">Vizyon & Misyon</a></li>
+                <li><a href="index.html#hizmetler">Hizmetler</a></li>
+                <li><a href="index.html#teknolojiler">Teknolojiler</a></li>
+                <li><a href="index.html#urunler">Ürünlerimiz</a></li>
+                <li><a href="index.html#iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Geri Dön Butonu -->
+    <div class="back-btn-wrap">
+        <a href="index.html#urunler" class="back-btn">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Ürünlerimize Dön
+        </a>
+    </div>
+
+    <!-- Ürün Detay Bölümü -->
+    <section class="section nova-detail-section" id="urun-detay">
+        
+        <!-- ── Ana Hero Kart ── -->
+        <div class="nova-product-card">
+
+            <!-- Sol: Bilgi paneli -->
+            <div class="nova-info">
+                <div class="nova-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    Amiral Gemisi Ürün · v1.0.0
+                </div>
+
+                <h3>Nova <span>CRM</span></h3>
+
+                <div class="nova-platforms">
+                    <span title="Windows">🖥 Windows</span>
+                    <span title="macOS">🍎 macOS</span>
+                    <span title="Linux">🐧 Linux</span>
+                    <span title="Android">🤖 Android</span>
+                    <span title="iOS">📱 iOS</span>
+                    <span title="Web">🌐 Web</span>
+                </div>
+
+                <p class="nova-desc">Modern işletmeler için <strong>Offline-First</strong> prensibiyle, üst düzey güvenlik ve performans standartlarıyla geliştirilmiş cross-platform Müşteri İlişkileri Yönetimi uygulaması. Standart bir CRM'in ötesinde; yapay zeka entegrasyonu ve sıfır gecikmeli veri erişimi ile benzersiz bir deneyim sunar.</p>
+
+                <ul class="nova-features">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <strong>100% Offline-First</strong> — SQLite tabanlı yerel veri, sıfır ms gecikme
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <strong>Gemini AI</strong> — Toplantı/ses kayıtlarından aksiyon noktalarını otomatik çıkarır
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <strong>VIP & Karlılık Analizi</strong> — İşlem hacmine göre otomatik müşteri skorlama
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <strong>Nakit Akış Tahmini</strong> — Gelecekteki kasa durumunu öngören akıllı projeksiyon
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <strong>Şifreli Google Drive Yedekleme</strong> — Uçtan uca şifreli ZIP, tek tıkla
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <strong>Widget Tabanlı Dashboard</strong> — Sürükle-bırak ile kişiselleştirilebilir ana ekran
+                    </li>
+                </ul>
+
+                <div class="nova-tags">
+                    <span>Flutter</span><span>Gemini AI</span><span>Offline-First</span>
+                    <span>SQLite</span><span>Firebase Auth</span><span>Cross-Platform</span>
+                </div>
+
+                <div class="nova-actions">
+                    <a href="index.html#iletisim" class="nova-btn-primary">Demo Talep Et</a>
+                    <a href="index.html#iletisim" class="nova-btn-secondary">Fiyat Al</a>
+                </div>
+            </div>
+
+            <!-- Sağ: Mockup ekran -->
+            <div class="nova-visual">
+                <div class="nova-screen">
+                    <div class="ns-topbar">
+                        <span class="ns-dot" style="background:#ff5f57"></span>
+                        <span class="ns-dot" style="background:#febc2e"></span>
+                        <span class="ns-dot" style="background:#28c840"></span>
+                        <span class="ns-title">Nova CRM — Dashboard</span>
+                        <span class="ns-offline-badge">● Offline</span>
+                    </div>
+                    <div class="ns-body">
+                        <div class="ns-stats">
+                            <div class="ns-stat">
+                                <span class="ns-stat-val">1.284</span>
+                                <span class="ns-stat-lbl">Aktif Müşteri</span>
+                                <span class="ns-stat-up">↑ 12%</span>
+                            </div>
+                            <div class="ns-stat">
+                                <span class="ns-stat-val">₺486K</span>
+                                <span class="ns-stat-lbl">Aylık Ciro</span>
+                                <span class="ns-stat-up">↑ 8%</span>
+                            </div>
+                            <div class="ns-stat">
+                                <span class="ns-stat-val">94</span>
+                                <span class="ns-stat-lbl">Açık Görev</span>
+                                <span class="ns-stat-down">↓ 3%</span>
+                            </div>
+                        </div>
+                        <div class="ns-chart">
+                            <div class="ns-bar-label">Nakit Akış Tahmini</div>
+                            <div class="ns-bars">
+                                <div class="ns-bar" style="--h:55%"></div>
+                                <div class="ns-bar" style="--h:75%"></div>
+                                <div class="ns-bar" style="--h:45%"></div>
+                                <div class="ns-bar" style="--h:90%"></div>
+                                <div class="ns-bar" style="--h:60%"></div>
+                                <div class="ns-bar" style="--h:80%"></div>
+                                <div class="ns-bar ns-bar--active" style="--h:95%"></div>
+                            </div>
+                        </div>
+                        <div class="ns-ai-row">
+                            <span class="ns-ai-icon">✦</span>
+                            <div class="ns-ai-text">
+                                <span>Gemini AI — Toplantı Analizi</span>
+                                <small>3 aksiyon noktası tespit edildi, form otomatik dolduruldu.</small>
+                            </div>
+                        </div>
+                        <div class="ns-list">
+                            <div class="ns-list-row">
+                                <span class="ns-avatar" style="background:rgba(0,240,255,0.2);color:var(--neon-blue)">AK</span>
+                                <div class="ns-list-info"><b>Ahmet Koç</b><small>VIP · Teklif Gönderildi</small></div>
+                                <span class="ns-pill ns-pill--warm">Sıcak</span>
+                            </div>
+                            <div class="ns-list-row">
+                                <span class="ns-avatar" style="background:rgba(34,197,94,0.15);color:#22c55e">SY</span>
+                                <div class="ns-list-info"><b>Selin Yılmaz</b><small>Anlaşma Kapandı</small></div>
+                                <span class="ns-pill ns-pill--won">Kazanıldı</span>
+                            </div>
+                            <div class="ns-list-row">
+                                <span class="ns-avatar" style="background:rgba(168,85,247,0.15);color:#a855f7">MB</span>
+                                <div class="ns-list-info"><b>Mert Bulut</b><small>Demo Planlandı</small></div>
+                                <span class="ns-pill ns-pill--new">Yeni</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Güvenlik & UI Şeridi ── -->
+        <div class="nova-highlights">
+            <div class="nova-hl-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <div><strong>Anti-Tamper Güvenlik</strong><small>Root / Jailbreak tespiti, NTP zaman doğrulama</small></div>
+            </div>
+            <div class="nova-hl-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                </svg>
+                <div><strong>Rol Bazlı Erişim</strong><small>Firebase Auth Custom Claims, salt okunur mod</small></div>
+            </div>
+            <div class="nova-hl-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <div><strong>Şifreli Yedekleme</strong><small>Google Drive entegrasyonu, uçtan uca ZIP</small></div>
+            </div>
+            <div class="nova-hl-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <div><strong>0 ms Veri Erişimi</strong><small>Tam offline çalışma, ağ bağımlılığı yok</small></div>
+            </div>
+        </div>
+
+        <!-- ── Modüller Grid ── -->
+        <div class="nova-modules-wrap">
+            <h4 class="nova-modules-title">7 Entegre Modül</h4>
+            <div class="nova-modules-grid">
+
+                <div class="nova-module-card">
+                    <div class="nm-icon" style="--c:var(--neon-blue)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h5>Müşteri Yönetimi</h5>
+                    <p>360° profil, VIP skoru, tek tıkla PDF rapor</p>
+                </div>
+
+                <div class="nova-module-card">
+                    <div class="nm-icon" style="--c:#a855f7">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h5>Çalışan Yönetimi</h5>
+                    <p>Özlük dosyası, verimlilik liderlik tablosu</p>
+                </div>
+
+                <div class="nova-module-card">
+                    <div class="nm-icon" style="--c:#22c55e">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h5>Finans & Muhasebe</h5>
+                    <p>İlişkisel işlemler, nakit akış tahmini</p>
+                </div>
+
+                <div class="nova-module-card">
+                    <div class="nm-icon" style="--c:#fb923c">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <h5>Görev Takibi</h5>
+                    <p>Multi-assign, müşteri & işlem bağlantısı</p>
+                </div>
+
+                <div class="nova-module-card">
+                    <div class="nm-icon" style="--c:#38bdf8">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h5>Dosya Yönetimi</h5>
+                    <p>Hiyerarşik klasör, sürükle-bırak, PDF görüntüleyici</p>
+                </div>
+
+                <div class="nova-module-card">
+                    <div class="nm-icon" style="--c:#f472b6">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><circle cx="18" cy="6" r="3"/>
+                        </svg>
+                    </div>
+                    <h5>AI Toplantılar</h5>
+                    <p>Gemini analizi, ses/döküm → otomatik form</p>
+                </div>
+
+                <div class="nova-module-card">
+                    <div class="nm-icon" style="--c:#facc15">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                    </div>
+                    <h5>Akıllı Dashboard</h5>
+                    <p>Widget tabanlı, sürükle-bırak kişiselleştirme</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Alt Bilgi -->
+    <footer>
+        <p>&copy; 2024 WISE TECH - Adem Öcel. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- JS dahil edildi -->
+    <script src="script.js"></script>
+</body>
+</html>

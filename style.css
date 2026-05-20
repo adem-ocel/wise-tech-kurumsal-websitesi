@@ -1,0 +1,1175 @@
+/* --- Değişkenler & Temel Ayarlar --- */
+:root {
+    --bg-dark: #030a16;
+    --bg-card: #0a1526;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --neon-blue: #00f0ff;
+    --neon-blue-glow: rgba(0, 240, 255, 0.3);
+    --neon-dark: #005f73;
+    --circuit-line: rgba(0, 240, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    /* Devre kartı ızgara deseni arka planı */
+    background-image: 
+        linear-gradient(var(--circuit-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--circuit-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-attachment: fixed;
+}
+
+/* --- Navigasyon --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(3, 10, 22, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    line-height: 1;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text span {
+    color: var(--neon-blue);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 8px var(--neon-blue-glow);
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ortadaki parlama efekti */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, rgba(3, 10, 22, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    color: var(--neon-blue);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero p {
+    max-width: 600px;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--neon-blue);
+    border: 1px solid var(--neon-blue);
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.btn:hover {
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px var(--neon-blue-glow);
+}
+
+/* --- Hizmetler Section --- */
+.section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: rgba(10, 21, 38, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue));
+    transition: all 0.5s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-blue);
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem auto;
+    fill: none;
+    stroke: var(--neon-blue);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- İletişim Section --- */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(10, 21, 38, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 4rem 2rem;
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contact-item a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue-glow);
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    stroke: var(--neon-blue);
+    fill: none;
+    stroke-width: 2;
+}
+
+/* --- Nova CRM Ürün Kartı --- */
+.nova-product-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    background: rgba(10, 21, 38, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-radius: 24px;
+    padding: 3.5rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+/* Köşe vurgu gradyanı */
+.nova-product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 50%; height: 2px;
+    background: linear-gradient(90deg, var(--neon-blue), transparent);
+}
+.nova-product-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 50%; height: 2px;
+    background: linear-gradient(270deg, var(--neon-blue), transparent);
+}
+
+/* Amiral gemisi rozeti */
+.nova-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--neon-blue);
+    background: rgba(0, 240, 255, 0.08);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-radius: 50px;
+    padding: 0.3rem 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Platform etiketleri */
+.nova-platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+.nova-platforms span {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-muted);
+}
+
+/* Başlık */
+.nova-info h3 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+.nova-info h3 span {
+    color: var(--neon-blue);
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+.nova-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+}
+.nova-desc strong { color: var(--text-main); }
+
+/* Özellik listesi */
+.nova-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 1.75rem;
+}
+.nova-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.nova-features li svg {
+    width: 16px; height: 16px;
+    stroke: var(--neon-blue);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.nova-features li strong { color: #fff; }
+
+/* Etiketler */
+.nova-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+.nova-tags span {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    background: rgba(0, 240, 255, 0.06);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: var(--neon-blue);
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* Aksiyon butonları */
+.nova-actions { display: flex; gap: 1rem; }
+.nova-btn-primary {
+    padding: 0.85rem 2rem;
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+}
+.nova-btn-primary:hover {
+    box-shadow: 0 0 35px rgba(0, 240, 255, 0.5);
+    transform: translateY(-2px);
+}
+.nova-btn-secondary {
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.nova-btn-secondary:hover { border-color: var(--neon-blue); color: var(--neon-blue); }
+
+/* ---- Mockup Ekran ---- */
+.nova-visual { perspective: 1000px; }
+.nova-screen {
+    background: #060f1e;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0, 240, 255, 0.06);
+    transform: rotateY(-4deg) rotateX(2deg);
+    transition: transform 0.5s ease;
+}
+.nova-product-card:hover .nova-screen { transform: rotateY(0deg) rotateX(0deg); }
+
+.ns-topbar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.6rem 1rem;
+    background: #030a16;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.08);
+}
+.ns-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.ns-title { font-size: 0.72rem; color: var(--text-muted); margin-left: 0.5rem; letter-spacing: 0.5px; flex:1; }
+.ns-offline-badge { font-size: 0.62rem; color: #22c55e; font-weight: 700; }
+
+.ns-body { padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+.ns-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.ns-stat {
+    background: rgba(0,240,255,0.04);
+    border: 1px solid rgba(0,240,255,0.1);
+    border-radius: 8px;
+    padding: 0.6rem 0.75rem;
+    display: flex; flex-direction: column; gap: 2px;
+}
+.ns-stat-val { font-size: 1rem; font-weight: 700; color: #fff; }
+.ns-stat-lbl { font-size: 0.62rem; color: var(--text-muted); }
+.ns-stat-up  { font-size: 0.65rem; color: #22c55e; font-weight: 600; }
+.ns-stat-down{ font-size: 0.65rem; color: #f87171; font-weight: 600; }
+
+.ns-chart { background: rgba(0,240,255,0.02); border: 1px solid rgba(0,240,255,0.08); border-radius: 8px; padding: 0.75rem; }
+.ns-bar-label { font-size: 0.65rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+.ns-bars { display: flex; align-items: flex-end; gap: 5px; height: 44px; }
+.ns-bar { flex: 1; height: var(--h); background: rgba(0,240,255,0.2); border-radius: 3px 3px 0 0; }
+.ns-bar--active { background: var(--neon-blue); box-shadow: 0 0 8px rgba(0,240,255,0.4); }
+
+/* Gemini AI satırı */
+.ns-ai-row {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.45rem 0.7rem;
+    background: rgba(168,85,247,0.06);
+    border: 1px solid rgba(168,85,247,0.2);
+    border-radius: 8px;
+}
+.ns-ai-icon { font-size: 1rem; color: #a855f7; flex-shrink: 0; }
+.ns-ai-text { display: flex; flex-direction: column; }
+.ns-ai-text span { font-size: 0.7rem; font-weight: 600; color: #a855f7; }
+.ns-ai-text small { font-size: 0.6rem; color: var(--text-muted); }
+
+.ns-list { display: flex; flex-direction: column; gap: 0.35rem; }
+.ns-list-row { display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.5rem; background: rgba(255,255,255,0.02); border-radius: 7px; }
+.ns-avatar { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.58rem; font-weight: 700; flex-shrink: 0; }
+.ns-list-info { flex: 1; display: flex; flex-direction: column; }
+.ns-list-info b { font-size: 0.68rem; color: #fff; font-weight: 600; }
+.ns-list-info small { font-size: 0.58rem; color: var(--text-muted); }
+.ns-pill { font-size: 0.56rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 0.15rem 0.45rem; border-radius: 50px; }
+.ns-pill--warm   { background: rgba(251,146,60,0.15); color: #fb923c; }
+.ns-pill--won    { background: rgba(34,197,94,0.15);  color: #22c55e; }
+.ns-pill--new    { background: rgba(168,85,247,0.15); color: #a855f7; }
+
+/* ---- Güvenlik & UI Şeridi ---- */
+.nova-highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 2rem;
+    background: rgba(10,21,38,0.3);
+    border: 1px solid rgba(0,240,255,0.08);
+    border-radius: 16px;
+}
+.nova-hl-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.nova-hl-item svg {
+    width: 28px; height: 28px;
+    stroke: var(--neon-blue);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+.nova-hl-item div { display: flex; flex-direction: column; gap: 2px; }
+.nova-hl-item strong { font-size: 0.82rem; color: #fff; }
+.nova-hl-item small  { font-size: 0.7rem; color: var(--text-muted); line-height: 1.4; }
+
+/* ---- Modüller Grid ---- */
+.nova-modules-wrap { margin-top: 0.5rem; }
+.nova-modules-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+.nova-modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+}
+.nova-module-card {
+    background: rgba(10,21,38,0.3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.nova-module-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0,240,255,0.2);
+}
+.nm-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+    background: color-mix(in srgb, var(--c) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+    color: var(--c);
+}
+.nm-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.nova-module-card h5 { font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem; }
+.nova-module-card p  { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; }
+
+/* Responsive */
+@media (max-width: 1024px) { .nova-highlights { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) {
+    .nova-product-card { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; }
+    .nova-screen { transform: none !important; }
+    .nova-info h3 { font-size: 2rem; }
+    .nova-highlights { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .nova-highlights { grid-template-columns: 1fr; }
+    .nova-modules-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --- Product Card Link Wrapper --- */
+.product-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* --- Eski filtre / kart CSS (ilerideki ürünler için tutuldu) --- */
+.products-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 0.55rem 1.5rem;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 14px rgba(0, 240, 255, 0.3);
+    font-weight: 600;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Kartı gizleme/gösterme animasyonu */
+.product-card {
+    background: rgba(10, 21, 38, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 240, 255, 0.12);
+    border-radius: 18px;
+    padding: 2rem 1.75rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.3s ease;
+}
+
+/* Kare Kart Tasarımı */
+.product-card--square {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 1.25rem 1.25rem;
+    gap: 0.6rem;
+}
+
+/* Kare kart içindeki eleman boyutlandırma optimizasyonları */
+.product-card--square .product-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+}
+.product-card--square .product-icon-wrap svg {
+    width: 20px;
+    height: 20px;
+}
+.product-card--square h3 {
+    font-size: 1.15rem;
+}
+.product-card--square p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+.product-card--square .product-tags {
+    gap: 0.35rem;
+}
+.product-card--square .product-tags span {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+}
+.product-card--square .product-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+}
+
+.product-card.hidden {
+    display: none;
+}
+
+.product-card.fade-in {
+    animation: cardFadeIn 0.4s ease both;
+}
+
+@keyframes cardFadeIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 240, 255, 0.1);
+    border-color: rgba(0, 240, 255, 0.35);
+}
+
+/* Üst parlama çizgisi */
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.product-card:hover::before { opacity: 1; }
+
+/* Badge (kategori etiketi) */
+.product-badge {
+    position: absolute;
+    top: 1.1rem; right: 1.1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--neon-blue);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+}
+
+.product-badge--mobil  { background: rgba(34,197,94,0.1);  color: #22c55e; border-color: rgba(34,197,94,0.25); }
+.product-badge--ai     { background: rgba(168,85,247,0.1);  color: #a855f7; border-color: rgba(168,85,247,0.25); }
+.product-badge--kurumsal { background: rgba(251,146,60,0.1); color: #fb923c; border-color: rgba(251,146,60,0.25); }
+
+/* İkon sarmalayıcı */
+.product-icon-wrap {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 240, 255, 0.08);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: var(--neon-blue);
+    flex-shrink: 0;
+}
+
+.product-icon-wrap svg { width: 26px; height: 26px; }
+
+.product-icon-wrap--mobil   { background: rgba(34,197,94,0.08);  border-color: rgba(34,197,94,0.2);   color: #22c55e; }
+.product-icon-wrap--ai      { background: rgba(168,85,247,0.08); border-color: rgba(168,85,247,0.2);  color: #a855f7; }
+.product-icon-wrap--kurumsal{ background: rgba(251,146,60,0.08); border-color: rgba(251,146,60,0.2);  color: #fb923c; }
+
+/* Ürün başlık & açıklama */
+.product-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.product-card > p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    line-height: 1.75;
+    flex: 1;
+}
+
+/* Etiketler */
+.product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.product-tags span {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+/* Demo butonu */
+.product-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 0.65rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: rgba(0, 240, 255, 0.08);
+    color: var(--neon-blue);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.product-btn:hover {
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+    box-shadow: 0 0 16px rgba(0, 240, 255, 0.3);
+}
+
+.product-btn--mobil    { background: rgba(34,197,94,0.08);  color: #22c55e; border-color: rgba(34,197,94,0.3); }
+.product-btn--mobil:hover    { background: #22c55e;  color: #030a16; box-shadow: 0 0 16px rgba(34,197,94,0.35); }
+.product-btn--ai       { background: rgba(168,85,247,0.08); color: #a855f7; border-color: rgba(168,85,247,0.3); }
+.product-btn--ai:hover       { background: #a855f7;  color: #030a16; box-shadow: 0 0 16px rgba(168,85,247,0.35); }
+.product-btn--kurumsal { background: rgba(251,146,60,0.08); color: #fb923c; border-color: rgba(251,146,60,0.3); }
+.product-btn--kurumsal:hover { background: #fb923c;  color: #030a16; box-shadow: 0 0 16px rgba(251,146,60,0.35); }
+
+/* --- Vizyon & Misyon Section --- */
+.vm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.vm-card {
+    background: rgba(10, 21, 38, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Vizyon — sol üst köşeden neon mavi vurgu */
+.vm-card--vision::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-blue), transparent);
+}
+
+/* Misyon — sağ üst köşeden mor vurgu */
+.vm-card--mission::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(270deg, #a855f7, transparent);
+}
+
+.vm-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 240, 255, 0.08);
+}
+
+.vm-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 240, 255, 0.06);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.vm-card--mission .vm-icon-wrap {
+    background: rgba(168, 85, 247, 0.06);
+    border-color: rgba(168, 85, 247, 0.2);
+}
+
+.vm-icon {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: var(--neon-blue);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.vm-card--mission .vm-icon {
+    stroke: #a855f7;
+}
+
+.vm-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.vm-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(0, 240, 255, 0.1);
+    margin-top: 4rem;
+    background: rgba(3, 10, 22, 0.9);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Animasyonlar --- */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive Tasarım --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero h2 { font-size: 1.2rem; }
+    .nav-links { display: none; }
+    .section { padding: 4rem 1rem; }
+    .contact-item { flex-direction: column; gap: 0.5rem; }
+    .vm-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Teknoloji Havuzu Section --- */
+.tech-stack-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.tech-category-card {
+    background: rgba(10, 21, 38, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Hover durumunda kategoriye özel neon parlama ve renk vurguları */
+.tech-category-card--ui:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 12px 40px rgba(0, 240, 255, 0.15);
+    transform: translateY(-5px);
+}
+.tech-category-card--server:hover {
+    border-color: #22c55e;
+    box-shadow: 0 12px 40px rgba(34, 197, 94, 0.15);
+    transform: translateY(-5px);
+}
+.tech-category-card--ai:hover {
+    border-color: #a855f7;
+    box-shadow: 0 12px 40px rgba(168, 85, 247, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Üst şerit gradyanları */
+.tech-category-card--ui::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+}
+.tech-category-card--server::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, #22c55e, transparent);
+}
+.tech-category-card--ai::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, #a855f7, transparent);
+}
+
+.tech-category-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tech-category-card h3 svg {
+    width: 24px; height: 24px;
+    fill: none; stroke-width: 1.5;
+    stroke-linecap: round; stroke-linejoin: round;
+}
+.tech-category-card--ui h3 svg { stroke: var(--neon-blue); }
+.tech-category-card--server h3 svg { stroke: #22c55e; }
+.tech-category-card--ai h3 svg { stroke: #a855f7; }
+
+.tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tech-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.tech-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.tech-category-card--ui .tech-icon-box {
+    background: rgba(0, 240, 255, 0.06);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    color: var(--neon-blue);
+}
+.tech-category-card--server .tech-icon-box {
+    background: rgba(34, 197, 94, 0.06);
+    border: 1px solid rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+.tech-category-card--ai .tech-icon-box {
+    background: rgba(168, 85, 247, 0.06);
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    color: #a855f7;
+}
+
+/* Hoverda ikon parlaması */
+.tech-category-card--ui .tech-item:hover .tech-icon-box {
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+}
+.tech-category-card--server .tech-item:hover .tech-icon-box {
+    background: #22c55e;
+    color: var(--bg-dark);
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+}
+.tech-category-card--ai .tech-item:hover .tech-icon-box {
+    background: #a855f7;
+    color: var(--bg-dark);
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+}
+
+.tech-icon-box svg {
+    width: 22px; height: 22px;
+    fill: none; stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round; stroke-linejoin: round;
+}
+
+.tech-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.tech-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.tech-info p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Responsive Geliştirmeler */
+@media (max-width: 900px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
