@@ -52,6 +52,193 @@
         .nova-product-card .nova-screen {
             transform: none; /* Standart sayfada sabit durması daha profesyonel */
         }
+
+        /* Fiyat Kartı Sarmalayıcısı */
+        .nova-price-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        /* Fiyat Kartı Tasarımı */
+        .nova-price-card {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.04) 0%, rgba(10, 21, 38, 0.7) 100%);
+            border: 1px solid rgba(0, 240, 255, 0.15);
+            border-left: 4px solid var(--neon-blue);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 0;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 240, 255, 0.03);
+            max-width: 420px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .nova-price-card:hover {
+            border-color: rgba(0, 240, 255, 0.35);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 240, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* Işık yansıması efekti */
+        .nova-price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.05),
+                transparent
+            );
+            transform: skewX(-25deg);
+            transition: 0.75s;
+        }
+
+        .nova-price-card:hover::before {
+            left: 125%;
+        }
+        
+        .npc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+        
+        .npc-badge {
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            color: var(--neon-blue);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+        }
+
+        .npc-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--neon-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--neon-blue);
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        .npc-tag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .npc-tag svg {
+            color: var(--neon-blue);
+        }
+        
+        .npc-price {
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .npc-currency {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+        }
+        
+        .npc-amount {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 0.9;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            letter-spacing: -1px;
+        }
+        
+        .npc-period {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-left: 8px;
+            font-weight: 500;
+        }
+        
+        .npc-note {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+        
+        .npc-features {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .npc-feat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .npc-feat-item svg {
+            color: #22c55e;
+            flex-shrink: 0;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 50%;
+            padding: 2px;
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Fiyatlandırma Bölümü Stilleri */
+        .nova-pricing-section {
+            margin-top: 5rem;
+            text-align: center;
+            padding: 3.5rem 2rem;
+            background: linear-gradient(135deg, rgba(10, 21, 38, 0.4) 0%, rgba(3, 10, 22, 0.6) 100%);
+            border: 1px solid rgba(0, 240, 255, 0.08);
+            border-radius: 24px;
+            backdrop-filter: blur(12px);
+            box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.02);
+        }
+        
+        .nova-pricing-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: -0.5rem;
+            margin-bottom: 2.5rem;
+        }
     </style>
 </head>
 <body>
@@ -119,7 +306,7 @@
                     </li>
                     <li>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span><strong>Gemini AI</strong> — Toplantı/ses kayıtlarından aksiyon noktalarını otomatik çıkarır</span>
+                        <span><strong>Gemini AI</strong> — Belge ve toplantı analizleriyle otomatik form doldurma</span>
                     </li>
                     <li>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -143,10 +330,9 @@
                     <span>Flutter</span><span>Gemini AI</span><span>Offline-First</span>
                     <span>SQLite</span><span>Firebase Auth</span><span>Cross-Platform</span>
                 </div>
-
                 <div class="nova-actions">
-                    <a href="index.html#iletisim" class="nova-btn-primary">Demo Talep Et</a>
-                    <a href="index.html#iletisim" class="nova-btn-secondary">Fiyat Al</a>
+                    <a href="#fiyatlandirma" class="nova-btn-primary">Fiyatı Gör ($12)</a>
+                    <a href="index.html#iletisim" class="nova-btn-secondary">Demo Talep Et</a>
                 </div>
             </div>
 
@@ -193,8 +379,8 @@
                         <div class="ns-ai-row">
                             <span class="ns-ai-icon">✦</span>
                             <div class="ns-ai-text">
-                                <span>Gemini AI — Toplantı Analizi</span>
-                                <small>3 aksiyon noktası tespit edildi, form otomatik dolduruldu.</small>
+                                <span>Gemini AI — Belge ve Toplantı Analizi</span>
+                                <small>Yüklenen belgeden ve sesten veriler çıkarılarak form dolduruldu.</small>
                             </div>
                         </div>
                         <div class="ns-list">
@@ -311,8 +497,8 @@
                             <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><circle cx="18" cy="6" r="3"/>
                         </svg>
                     </div>
-                    <h5>AI Toplantılar</h5>
-                    <p>Gemini analizi, ses/döküm → otomatik form</p>
+                    <h5>Yapay zeka analizleri</h5>
+                    <p>Yüklenen belgelerden otomatik veri girişi ve toplantı kaydı analizi</p>
                 </div>
 
                 <div class="nova-module-card">
@@ -325,6 +511,62 @@
                     <p>Widget tabanlı, sürükle-bırak kişiselleştirme</p>
                 </div>
 
+            </div>
+        </div>
+
+        <!-- ── Fiyatlandırma & Satın Alma Bölümü ── -->
+        <div id="fiyatlandirma" class="nova-pricing-section">
+            <h4 class="nova-modules-title" style="margin-bottom: 0.5rem;">Basit ve Şeffaf Fiyatlandırma</h4>
+            <p class="nova-pricing-subtitle">Gizli maliyetler yok. Tek lisans ile tamamen size ait güvenli kişisel depolama.</p>
+            
+            <div class="nova-price-wrapper">
+                <div class="nova-price-card">
+                    <div class="npc-body" style="margin-top: 0.5rem;">
+                        <div class="npc-price">
+                            <span class="npc-currency">$</span>
+                            <span class="npc-amount">12</span>
+                            <span class="npc-period">/ aylık</span>
+                        </div>
+                        <p class="npc-note">Kişisel Offline Lisans</p>
+                    </div>
+                    <div class="npc-features">
+                        <div class="npc-feat-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Müşteri & Çalışan Yönetimi
+                        </div>
+                        <div class="npc-feat-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Finans, Muhasebe & Nakit Akışı
+                        </div>
+                        <div class="npc-feat-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Görev Takibi & Dosya Yönetimi
+                        </div>
+                        <div class="npc-feat-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Belge ve Toplantı Analizi & Akıllı Dashboard
+                        </div>
+                        <div class="npc-feat-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Kendi Drive'ınızda güvenli kişisel depolama
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nova-actions" style="justify-content: center; margin-top: 1rem;">
+                <a href="index.html#iletisim" class="nova-btn-primary" style="padding: 1rem 3rem;">Hemen Satın Al ($12)</a>
+                <a href="index.html#iletisim" class="nova-btn-secondary" style="padding: 1rem 3rem;">Demo Talep Et</a>
             </div>
         </div>
 
